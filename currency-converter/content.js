@@ -7,7 +7,8 @@ async function getExchangeRates() {
 }
 
 function detectAndConvertCurrency(text, rates, twdRate) {
-  let currencyRegex = /(\$|€|£|¥)\s?(\d{1,3}(,\d{3})*(\.\d{1,2})?|\d+(\.\d{1,2})?)/g;
+  // Updated regex to include more currency symbols
+  let currencyRegex = /(\$|€|£|¥|₩|₹|₽|₱|฿|CHF|C\$|A\$|NZ\$|HK\$|S\$)\s?(\d{1,3}(,\d{3})*(\.\d{1,2})?|\d+(\.\d{1,2})?)/g;
 
   function convertToTWD(match, symbol, amount) {
     amount = parseFloat(amount.replace(/,/g, ''));
@@ -17,7 +18,18 @@ function detectAndConvertCurrency(text, rates, twdRate) {
       case '€': currency = 'EUR'; break;
       case '£': currency = 'GBP'; break;
       case '¥': currency = 'JPY'; break;
-      default: currency = 'USD';
+      case '₩': currency = 'KRW'; break;  // South Korean Won
+      case '₹': currency = 'INR'; break;  // Indian Rupee
+      case '₽': currency = 'RUB'; break;  // Russian Ruble
+      case '₱': currency = 'PHP'; break;  // Philippine Peso
+      case '฿': currency = 'THB'; break;  // Thai Baht
+      case 'CHF': currency = 'CHF'; break;  // Swiss Franc
+      case 'C$': currency = 'CAD'; break;  // Canadian Dollar
+      case 'A$': currency = 'AUD'; break;  // Australian Dollar
+      case 'NZ$': currency = 'NZD'; break;  // New Zealand Dollar
+      case 'HK$': currency = 'HKD'; break;  // Hong Kong Dollar
+      case 'S$': currency = 'SGD'; break;  // Singapore Dollar
+      default: currency = 'USD';  // Default to USD if symbol not recognized
     }
 
     let usdAmount = amount / rates[currency];

@@ -3,6 +3,7 @@
   "name": "Currency Converter",
   "version": "1.0",
   "description": "Convert currencies on hover",
+  "author": "ChemElecRx",
   "permissions": [
     "activeTab",
     "scripting",
