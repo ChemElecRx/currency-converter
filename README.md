@@ -29,6 +29,9 @@ This project is a Google Chrome extension that converts various currencies to Ne
 ### Activate the extension:
 1. Click on the extension icon in the Chrome toolbar.
 2. Use the toggle switch in the popup to enable or disable currency conversion.
+```
+npm install electron --save-dev
+```
 ## Usage
 Hover over any price tag: When the extension is enabled, hovering over any price tag in a supported currency will show a tooltip with the equivalent amount in TWD.
 ## chatGPT
