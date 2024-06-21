@@ -32,3 +32,5 @@ This project is a Google Chrome extension that converts various currencies to Ne
 2. Use the toggle switch in the popup to enable or disable currency conversion.
 ## Usage
 Hover over any price tag: When the extension is enabled, hovering over any price tag in a supported currency will show a tooltip with the equivalent amount in TWD.
+## chatGPT
+Randomly generate a list of price tags with the following currency signs: $, €, £, ¥, ₩, ₹, ₽, ₱, ฿, CHF, C$, A$, NZ$, HK$, and S$.
