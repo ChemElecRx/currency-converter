@@ -15,8 +15,7 @@ This project is a Google Chrome extension that converts various currencies to Ne
 ├── manifest.json            # Extension configuration
 ├── popup.html               # HTML file for the extension popup
 ├── popup.js                 # Script for handling popup interactions
-├── style.css                # CSS file for styling tooltips and popup
-└── README.md                # Project README file
+|__ style.css                # CSS file for styling tooltips and popup
 ```
 
 ## Setup and Installation
